@@ -7,20 +7,48 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #333;
+            color: white;
             text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
         .container {
-            background: #fff;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            text-align: center;
         }
         h1 {
             color: #333;
@@ -29,17 +57,45 @@
             color: #666;
         }
         img {
-            max-width: 300px;
+            max-width: 100%;
             height: auto;
             border-radius: 8px;
+            display: none;
+        }
+        .content {
+            margin-top: 20px;
         }
     </style>
+    <script>
+        function showImage() {
+            document.getElementById('microsites-img').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
-<div class="container">
-    <h1>Place to Grow</h1>
-    <p>Entity-relationship diagram</p>
-    <p><img src="public/Documents/microsites.png" alt="Entity-relationship diagram" /></p>
-</div>
+
+    <nav>
+        <div>
+            <h2>Place to Grow</h2>
+        </div>
+        <ul>
+            <li><a href="#" onclick="showImage()">Documentación</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Bienvenido a Place to Grow</h1>
+        <p>Haz clic en "Documentación" para ver el diagrama entidad-relación de Microsites.</p>
+        <div class="content">
+            <img id="microsites-img" src="public/Documents/microsites.png" alt="Diagrama de Microsites">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Place to Grow. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
